@@ -1,0 +1,31 @@
+/*class*/public class BinaryArea extends KrasserHamster{
+
+	private int length;
+	private int height;
+
+	public BinaryArea(int r, int s, int b, int k, int f){
+		super(r, s, b, k, f);
+		this.length = getLength();
+		this.height = getHeight();
+		
+	}
+	
+	public void writeInBinary(int number){
+		bottomRightCorner();
+    	int[] binary = toBinary(number, length);
+		setDirection(3);
+		for(int i = binary.length; i > 1; i -= 1){
+			if(binary[i - 1] == 1){
+				gib();
+			}
+			vor();
+		}
+	}
+	
+	public int measure(){
+		return length * height;
+	}
+	
+	
+}
+
